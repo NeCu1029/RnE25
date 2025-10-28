@@ -68,8 +68,8 @@ def ev(
     no: int,
 ) -> float:
     if no == -1:
-        return bef1(w1, w2, w3, w4, b1, b2, b3, b4, turn, 4, -100000.0, 100000.0)
-    return bef2(w1, w2, w3, w4, b1, b2, b3, b4, turn, 4, -100000.0, 100000.0, no)
+        return bef1(w1, w2, w3, w4, b1, b2, b3, b4, turn, 6, -100000.0, 100000.0)
+    return bef2(w1, w2, w3, w4, b1, b2, b3, b4, turn, 6, -100000.0, 100000.0, no)
 
 
 def fight(no1: int, no2: int):  # 시뮬레이션 1회 시행 (백 승 -> 0, 흑 승 -> 1)
@@ -170,9 +170,13 @@ def fight(no1: int, no2: int):  # 시뮬레이션 1회 시행 (백 승 -> 0, 흑
             return 0
         elif bl == [30] * 4:
             return 1
-        print(wh, bl, res)
 
 
 alloc()
-fight(19, -1)
+res = 0
+for _ in range(100):
+    cur = fight(39, -1)
+    print("선공 승" if cur == 0 else "후공 승")
+    res += cur
+print("후공 승:", res)
 dealloc()

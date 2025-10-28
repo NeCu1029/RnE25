@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define LAYER1 24
 #define LAYER2 12
-#define MODELNO 20
+#define MODELNO 40
 
 double bef(int, int, int, int, int, int, int, int, int, int, double, double, int);
 double aft(int, int, int, int, int, int, int, int, int, int, int, double, double, int);
@@ -72,7 +72,7 @@ typedef struct {
     double hidden2[LAYER2];
 } NNUE;
 
-NNUE* models[LAYER2];
+NNUE* models[MODELNO];
 
 NNUE* NNUE_create(int model_no) {
     NNUE* nn = (NNUE*)malloc(sizeof(NNUE));
@@ -280,8 +280,8 @@ double aft(int w1, int w2, int w3, int w4, int b1, int b2, int b3, int b4, int r
 
 int main(void) {
     alloc();
-    printf("%lf ", ev(0, 0, 0, 0, 0, 0, 0, 0, 0, 19));
-    printf("%lf ", bef(0, 0, 0, 0, 0, 0, 0, 0, 0, 8, -100000.0, 100000.0, 19));
+    printf("%lf ", ev(0, 0, 0, 0, 0, 0, 0, 0, 0, 39));
+    printf("%lf ", bef(0, 0, 0, 0, 0, 0, 0, 0, 0, 8, -100000.0, 100000.0, 39));
     dealloc();
     
     return 0;

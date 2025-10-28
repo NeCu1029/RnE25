@@ -1,6 +1,6 @@
 import torch
 
-for i in range(20):
+for i in range(40):
     f = open(f"models/model{i}.txt", "w")
     model = torch.jit.load(f"models/model{i}.pt")
     model.eval()
