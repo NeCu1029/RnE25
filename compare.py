@@ -157,7 +157,7 @@ def fight(no1: int, no2: int):  # 시뮬레이션 1회 시행 (백 승 -> 0, 흑
                 if cur > res:
                     move_mal, res, tu = i, cur, 1 - int(sq in (4, 5) or catch)
 
-            wh, bb = ww[:], bb[:]
+            wh, bl = ww[:], bb[:]
             ori = ww[move_mal]
             for j in range(4):
                 if wh[j] == ori and (ori > 0 or move_mal == j):
@@ -174,9 +174,9 @@ def fight(no1: int, no2: int):  # 시뮬레이션 1회 시행 (백 승 -> 0, 흑
 
 alloc()
 res = 0
-for _ in range(100):
-    cur = fight(39, -1)
-    print("선공 승" if cur == 0 else "후공 승")
+for i in range(100):
+    cur = fight(59, -1)
     res += cur
+    print(i, "선공 승" if cur == 0 else "후공 승")
 print("후공 승:", res)
 dealloc()

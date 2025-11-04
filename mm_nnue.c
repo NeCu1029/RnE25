@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define LAYER1 24
 #define LAYER2 12
-#define MODELNO 40
+#define MODELNO 60
 
 double bef(int, int, int, int, int, int, int, int, int, int, double, double, int);
 double aft(int, int, int, int, int, int, int, int, int, int, int, double, double, int);
